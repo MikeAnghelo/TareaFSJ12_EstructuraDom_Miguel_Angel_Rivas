@@ -8,5 +8,19 @@
 </head>
 <body>
     <h1>Ejercicio 1</h1>
+
+    <label for="">Ingresar Edad: </label>
+    <input type="number" id="edad">
+    <br>
+    <button onclick="obtenerEdad()">Obtener</button>
+    <br>
+    <p></p>
 </body>
+<script>
+    function obtenerEdad(){
+        let edadPersona = document.querySelector('#edad').value;
+        let mensaje = document.querySelector('p');
+        mensaje.textContent = edadPersona >= 18 ? "La persona es mayor de edad":"La persona es menor de edad";
+    }
+</script>
 </html>
