@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <h1>Ejercicio 10</h1>
+
+   
+</body>
+<script>
+    function edades(){
+         // Arrays para almacenar las edades de los estudiantes
+let edadesManana = [];
+let edadesTarde = [];
+let edadesNoche = [];
+
+// Variables para acumular las edades de cada turno
+let sumaEdadesManana = 0;
+let sumaEdadesTarde = 0;
+let sumaEdadesNoche = 0;
+
+// Solicitar las edades de cada estudiante y guardarlas en el array correspondiente
+for (let i = 0; i < 5; i++) {
+let edad = parseInt(prompt("Ingrese la edad del estudiante de la mañana " + (i+1)));
+edadesManana.push(edad);
+}
+for (let i = 0; i < 6; i++) {
+let edad = parseInt(prompt("Ingrese la edad del estudiante de la tarde " + (i+1)));
+edadesTarde.push(edad);
+}
+for (let i = 0; i < 11; i++) {
+let edad = parseInt(prompt("Ingrese la edad del estudiante de la noche " + (i+1)));
+edadesNoche.push(edad);
+}
+
+// Sumar las edades de cada turno
+for (let edad of edadesManana) {
+sumaEdadesManana += edad;
+}
+for (let edad of edadesTarde) {
+sumaEdadesTarde += edad;
+}
+for (let edad of edadesNoche) {
+sumaEdadesNoche += edad;
+}
+
+// Calcular los promedios de cada turno
+let promedioManana = sumaEdadesManana / edadesManana.length;
+let promedioTarde = sumaEdadesTarde / edadesTarde.length;
+let promedioNoche = sumaEdadesNoche / edadesNoche.length;
+
+// Mostrar los promedios por pantalla
+console.log("Promedio de edades de la mañana: " + promedioManana);
+console.log("Promedio de edades de la tarde: " + promedioTarde);
+console.log("Promedio de edades de la noche: " + promedioNoche);
+
+// Determinar cuál de los tres turnos tiene un promedio de edades mayor
+if (promedioManana > promedioTarde && promedioManana > promedioNoche) {
+console.log("El promedio de edades de la mañana es mayor.");
+} else if (promedioTarde > promedioManana && promedioTarde > promedioNoche) {
+console.log("El promedio de edades de la tarde es mayor.");
+} else if (promedioNoche > promedioManana && promedioNoche > promedioTarde) {
+console.log("El promedio de edades de la noche es mayor.");
+} else {
+console.log("Hay dos o más turnos con el mismo promedio de edades.");
+}
+    }
+   
+</script>
+</html>
