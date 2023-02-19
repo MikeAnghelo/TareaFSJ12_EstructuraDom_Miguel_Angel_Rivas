@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+
+    <label for="">Ingrese datos del empleado</label><br><br>
+    <label for="">Nombre Empleado: </label>
+    <input type="text" id="nombre"><br><br>
+    <label for="">Ingrese Salario: </label>
+    <input type="number" id="salario"><br><br>
+    <label for="">Seleccione Categoria: </label>
+    <select id="categoria">
+        <option value=""></option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <br><br>
+    <button onclick="calcularAumento()">Calcular</button><br><br>
+    <div id="resultado"></div>
+</body>
+<script>
+    function calcularAumento(){
+        let nombre = document.getElementById('nombre').value;
+        let salario = parseFloat(document.getElementById('salario').value);
+        let categoria = document.getElementById('categoria').value;
+        let aumento, aumentoPorcentaje, salarioAumento;
+        
+        switch(categoria){
+            case 'A':
+                aumentoPorcentaje = 0.15;
+                aumento = salario * aumentoPorcentaje;
+                salarioAumento = salario + aumento;
+                document.getElementById('resultado').innerHTML = "Empleado: "+ nombre + "<br>"+
+                "Salario: $"+ salario.toFixed(2) +"<br>"+"Categoria: "+ categoria +"<br>"+
+                "Porcentaje de aumento: "+(aumentoPorcentaje * 100).toFixed(2)+"%"+"<br>"+
+                "Aumento: $"+aumento.toFixed(2)+"<br>"+"Salario con Aumento: $"+salarioAumento.toFixed(2);
+                break;
+
+                case 'B':
+                aumentoPorcentaje = 0.30;
+                aumento = salario * aumentoPorcentaje;
+                salarioAumento = salario + aumento;
+                document.getElementById('resultado').innerHTML = "Empleado: "+ nombre + "<br>"+
+                "Salario: $"+ salario.toFixed(2) +"<br>"+"Categoria: "+ categoria +"<br>"+
+                "Porcentaje de aumento: "+(aumentoPorcentaje * 100).toFixed(2)+"%"+"<br>"+
+                "Aumento: $"+aumento.toFixed(2)+"<br>"+"Salario con Aumento: $"+salarioAumento.toFixed(2);
+                break;
+
+                case 'C':
+                aumentoPorcentaje = 0.10;
+                aumento = salario * aumentoPorcentaje;
+                salarioAumento = salario + aumento;
+                document.getElementById('resultado').innerHTML = "Empleado: "+ nombre + "<br>"+
+                "Salario: $"+ salario.toFixed(2) +"<br>"+"Categoria: "+ categoria +"<br>"+
+                "Porcentaje de aumento: "+(aumentoPorcentaje * 100).toFixed(2)+"%"+"<br>"+
+                "Aumento: $"+aumento.toFixed(2)+"<br>"+"Salario con Aumento: $"+salarioAumento.toFixed(2);
+                break;
+
+                case 'D':
+                aumentoPorcentaje = 0.20;
+                aumento = salario * aumentoPorcentaje;
+                salarioAumento = salario + aumento;
+                document.getElementById('resultado').innerHTML = "Empleado: "+ nombre + "<br>"+
+                "Salario: $"+ salario.toFixed(2) +"<br>"+"Categoria: "+ categoria +"<br>"+
+                "Porcentaje de aumento: "+(aumentoPorcentaje * 100).toFixed(2)+"%"+"<br>"+
+                "Aumento: $"+aumento.toFixed(2)+"<br>"+"Salario con Aumento: $"+salarioAumento.toFixed(2);
+                break;
+
+                default:
+                    document.getElementById('resultado').innerHTML = "No ha seleccionado ninguna categoria";
+                    break;
+        }
+    }
+</script>
+</html>
