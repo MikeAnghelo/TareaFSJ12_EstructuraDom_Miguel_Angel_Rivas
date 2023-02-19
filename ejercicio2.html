@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <h3>Datos Alumno</h3>
+    <label for="">Ingrese Nombre: </label>
+    <input type="text" id="nombre"><br><br>
+    <label for="">Ingrese Carnet: </label>
+    <input type="text" id="carnet"><br><br>
+    <label for="">Examen: </label>
+    <input type="number" id="examen"><br><br>
+    <label for="">Tareas: </label>
+    <input type="number" id="tareas"><br><br>
+    <label for="">Asistencia: </label>
+    <input type="number" id="asistencia"><br><br>
+    <label for="">Investigacion: </label>
+    <input type="number" id="invest"><br><br>
+    <button onclick="calcularNota()">Calcular</button><br><br>
+    <table id="tabla" style="border: 1px solid black">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Carnet</th>
+                <th>Nota Final</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+<script>
+    function calcularNota(){
+        let nombre = document.getElementById("nombre").value;
+        let carnet = document.getElementById("carnet").value;
+        let table = document.getElementById("tabla");
+        let examen = document.querySelector('#examen').value;
+        let tareas = document.querySelector('#tareas').value;
+        let asis = document.querySelector('#asistencia').value;
+        let invest = document.querySelector('#invest').value;
+        let notaFinal = ((examen * 0.20)+(tareas * 0.40)+ (asis * 0.10) + (invest * 0.30));
+        let fila = table.insertRow();
+        let celdaNombre = fila.insertCell();
+        let celdaCarnet = fila.insertCell();
+        let celdaNotaFinal = fila.insertCell();
+
+        celdaNombre.innerHTML = nombre;
+        celdaCarnet.innerHTML = carnet;
+        celdaNotaFinal.innerHTML = notaFinal;
+        
+    }
+</script>
+</html>
