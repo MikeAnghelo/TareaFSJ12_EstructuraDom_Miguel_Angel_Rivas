@@ -17,7 +17,37 @@
         <option value="FORD ESCAPE">FORD ESCAPE</option>
     </select>
     <br><br>
-    <button onclick="">Generar Descuento</button><br><br>
+    <button onclick="cargarDescuento()">Generar Descuento</button><br><br>
     <div id="resultado"></div>
 </body>
+<script>
+    function cargarDescuento(){
+        let descuento = 0;
+        let porcentajeDescuento;
+        let modelo = document.getElementById('modelo').value;
+
+        switch(modelo){
+            case 'FORD FIESTA':
+                descuento = 0.05;
+                porcentajeDescuento = descuento * 100;
+                document.getElementById('resultado').innerHTML = "Modelo: "+ modelo +"<br>"+
+                "Descuento: "+porcentajeDescuento+"%";
+                break;
+                case 'FORD FOCUS':
+                descuento = 0.1;
+                porcentajeDescuento = descuento * 100;
+                document.getElementById('resultado').innerHTML = "Modelo: "+ modelo +"<br>"+
+                "Descuento: "+porcentajeDescuento+"%";
+                break;
+                case 'FORD ESCAPE':
+                descuento = 0.2;
+                porcentajeDescuento = descuento * 100;
+                document.getElementById('resultado').innerHTML = "Modelo: "+ modelo +"<br>"+
+                "Descuento: "+porcentajeDescuento+"%";
+                break;
+                default:
+                document.getElementById('resultado').innerHTML = "No ha seleccionado Modelo"
+        }
+    }
+</script>
 </html>
