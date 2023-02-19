@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <h1>Ejercicio 9</h1>
+
+    <label for="">Ingrese 10 Numeros: </label>
+        <input type="text" id="numero"><br><br>
+        <button onclick="ingresoNumero()">Generar Analisis</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function ingresoNumero(){
+        let negativos= 0, positivos = 0, multiplos = 0, acumuladoPares = 0;
+        for(let i=1; i <= 10; i++){
+            let numero = parseInt(document.getElementById("numero").value);
+            i= numero;
+            if (numero < 0) {
+                negativos++;
+                } else if (numero > 0) {
+                positivos++;
+                }
+                if (numero % 15 === 0) {
+                multiplos++;
+                }
+                if (numero % 2 === 0) {
+                acumuladoPares += numero;
+                }
+            }
+            document.getElementById('resultado').innerHTML = "Valores Negativos: "+negativos+"<br>"+
+            "Valores Positivos: "+positivos+"<br>"+"Multiplos de 15: "+multiplos+"<br>"+
+            "Acumulados Pares: "+acumuladoPares;
+        }
+</script>
+</html>
